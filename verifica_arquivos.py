@@ -3,31 +3,20 @@ import pandas as pd
 import subprocess
 import platform
 
-# Lista de termos a serem buscados (case-insensitive agora)
+# Lista de termos a serem buscados (case-insensitive)
 TERMO_BUSCA = [
-    "RG_FRENTE",
-    "CNH",
-    "RG_VERSO",
-    "SELFIE",
-    "RG_FRENTE_TESTEMUNHA",
-    "CNH_TESTEMUNHA",
-    "RG_VERSO_TESTEMUNHA",
-    "arqRG_FRENTE",
-    "arqRG_VERSO",
-    "arqSelfieIni",
-    "arqCNH",
-    "arqfotoDocumentoFrente",
-    "arqfotoDocumentoVerso",
-    "arqDECLARACAO_RESIDENCIA"
+    "RG_FRENTE", "CNH", "RG_VERSO", "SELFIE",
+    "RG_FRENTE_TESTEMUNHA", "CNH_TESTEMUNHA", "RG_VERSO_TESTEMUNHA",
+    "arqRG_FRENTE", "arqRG_VERSO", "arqSelfieIni", "arqCNH",
+    "arqfotoDocumentoFrente", "arqfotoDocumentoVerso", "arqDECLARACAO_RESIDENCIA"
 ]
 
 def verificar_arquivos_por_caminho(arquivo_excel):
     """
     Verifica se arquivos com determinados nomes estão presentes nos diretórios especificados no Excel.
-
-    :param arquivo_excel: caminho do Excel de entrada com a coluna 'Caminho'
+    Cria um arquivo com duas abas: dados completos e resumo com colunas selecionadas (filtradas).
     """
-    # Lê o Excel gerado anteriormente
+    # Lê o Excel de entrada
     df = pd.read_excel(arquivo_excel)
 
     if 'Caminho' not in df.columns:
@@ -55,8 +44,21 @@ def verificar_arquivos_por_caminho(arquivo_excel):
     pasta_saida = os.path.dirname(arquivo_excel)
     novo_arquivo = os.path.join(pasta_saida, "docs_verificados.xlsx")
 
-    # Salva o novo Excel
-    df.to_excel(novo_arquivo, index=False)
+    # Criar DataFrame do resumo com colunas específicas
+    colunas_resumo = ['codigos_af', 'Caminho', 'Arquivos_Encontrados']
+    colunas_existentes = [col for col in colunas_resumo if col in df.columns]
+    df_resumo = df[colunas_existentes]
+
+    # Filtrar linhas que NÃO contenham "Diretório inexistente" nem "Nenhum"
+    df_resumo = df_resumo[
+        ~df_resumo['Arquivos_Encontrados'].isin(['Diretório inexistente', 'Nenhum'])
+    ]
+
+    # Salva o Excel com duas abas
+    with pd.ExcelWriter(novo_arquivo, engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name='Verificação Completa')
+        df_resumo.to_excel(writer, index=False, sheet_name='Resumo')
+
     print(f"Verificação concluída. Resultado salvo em: {novo_arquivo}")
 
     # Abre o diretório no explorador de arquivos

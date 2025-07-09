@@ -90,6 +90,8 @@ O Excel docs_verificados.xlsx conterá:
 
 - Arquivos_Encontrados: Lista dos arquivos identificados ou mensagem de erro
 
+- Criação da aba "Resumo" no arquivo final, contendo apenas as AFs que possuem algum documento em seu diretório
+
 ## 🛠️ Possíveis Erros & Soluções
 
 | Erro                    | Causa Possível                | Solução                                                                                                                           |
