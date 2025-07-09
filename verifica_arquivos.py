@@ -11,7 +11,11 @@ TERMO_BUSCA = [
     "SELFIE",
     "RG_FRENTE_TESTEMUNHA",
     "CNH_TESTEMUNHA",
-    "RG_VERSO_TESTEMUNHA"
+    "RG_VERSO_TESTEMUNHA",
+    "arqRG_FRENTE",
+    "arqRG_VERSO",
+    "arqSelfieIni",
+    "arqCNH"
 ]
 
 def verificar_arquivos_por_caminho(arquivo_excel):
