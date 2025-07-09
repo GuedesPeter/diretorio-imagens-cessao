@@ -67,6 +67,10 @@ SELFIE
 RG_FRENTE_TESTEMUNHA
 CNH_TESTEMUNHA
 RG_VERSO_TESTEMUNHA
+arqRG_FRENTE
+arqRG_VERSO
+arqSelfieIni
+arqCNH
 ```
 - Gera o arquivo ftp/dir/docs_verificados.xlsx com os resultados.
 
