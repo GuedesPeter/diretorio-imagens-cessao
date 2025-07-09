@@ -15,7 +15,10 @@ TERMO_BUSCA = [
     "arqRG_FRENTE",
     "arqRG_VERSO",
     "arqSelfieIni",
-    "arqCNH"
+    "arqCNH",
+    "arqfotoDocumentoFrente",
+    "arqfotoDocumentoVerso",
+    "arqDECLARACAO_RESIDENCIA"
 ]
 
 def verificar_arquivos_por_caminho(arquivo_excel):

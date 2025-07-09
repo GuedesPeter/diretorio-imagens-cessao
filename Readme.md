@@ -71,6 +71,9 @@ arqRG_FRENTE
 arqRG_VERSO
 arqSelfieIni
 arqCNH
+arqfotoDocumentoFrente
+arqfotoDocumentoVerso
+arqDECLARACAO_RESIDENCIA
 ```
 - Gera o arquivo ftp/dir/docs_verificados.xlsx com os resultados.
 
