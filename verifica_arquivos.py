@@ -3,12 +3,22 @@ import pandas as pd
 import subprocess
 import platform
 
-# Lista de termos a serem buscados (case-insensitive)
+# Lista de termos a serem buscados 
 TERMO_BUSCA = [
-    "RG_FRENTE", "CNH", "RG_VERSO", "SELFIE",
-    "RG_FRENTE_TESTEMUNHA", "CNH_TESTEMUNHA", "RG_VERSO_TESTEMUNHA",
-    "arqRG_FRENTE", "arqRG_VERSO", "arqSelfieIni", "arqCNH",
-    "arqfotoDocumentoFrente", "arqfotoDocumentoVerso", "arqDECLARACAO_RESIDENCIA"
+    "RG_FRENTE", 
+    "CNH", 
+    "RG_VERSO", 
+    "SELFIE",
+    "RG_FRENTE_TESTEMUNHA", 
+    "CNH_TESTEMUNHA", 
+    "RG_VERSO_TESTEMUNHA",
+    "arqRG_FRENTE", 
+    "arqRG_VERSO", 
+    "arqSelfieIni", 
+    "arqCNH",
+    "arqfotoDocumentoFrente", 
+    "arqfotoDocumentoVerso", 
+    "arqDECLARACAO_RESIDENCIA"
 ]
 
 def verificar_arquivos_por_caminho(arquivo_excel):
