@@ -49,12 +49,12 @@ pip install pandas openpyxl pyodbc
 #### 2. Execute o script de consulta SQL
 
 ```
-python consulta_afs.py
+python busca_dir.py
 ```
 
 #### 3. Execute o script de verificação de arquivos
 ```
-python verificar_docs_afs.py
+python verificar_arquivos.py
 ```
 
 - Lê o Excel anterior e verifica se nos diretórios existem arquivos com os seguintes nomes parciais (ignora maiúsculas/minúsculas):
