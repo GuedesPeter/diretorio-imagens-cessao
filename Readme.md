@@ -13,8 +13,8 @@ Este projeto automatiza dois processos essenciais relacionados aos Auxílios Fin
 
 | Script | Função |
 |--------|--------|
-| `consulta_afs.py` | Consulta os diretórios de documentos para cada AF via banco de dados SQL e gera um Excel com os caminhos. |
-| `verificar_docs_afs.py` | Acessa cada caminho gerado e verifica a existência dos arquivos esperados como RG, CNH, Selfie, etc. |
+| `busca_dir.py` | Consulta os diretórios de documentos para cada AF via banco de dados SQL e gera um Excel com os caminhos. |
+| `verifica_arquivos_.py` | Acessa cada caminho gerado e verifica a existência dos arquivos esperados como RG, CNH, Selfie, etc. |
 
 ---
 
