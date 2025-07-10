@@ -35,8 +35,8 @@ pip install pandas openpyxl pyodbc
 ├── lista/
 │   └── lista_afs.xlsx          # Planilha de entrada com a coluna "CODIGO_AF"
 ├── dir/
-│   ├── DIR_afs.xlsx            # Gerado pelo script consulta_afs.py
-│   └── docs_verificados.xlsx   # Gerado pelo script verificar_docs_afs.py
+│   ├── DIR_afs.xlsx            # Gerado pelo script busca_dir.py
+│   └── docs_verificados.xlsx   # Gerado pelo script verifica_arquivos.py
 ```
 
 ### ⚙️ Como Usar
